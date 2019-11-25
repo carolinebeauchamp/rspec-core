@@ -91,8 +91,7 @@ module RSpec
           end
 
           def dispatch_specs(run_descriptor)
-            pid = fork { run_specs(run_descriptor) }
-            Process.waitpid(pid)
+            fork { run_specs(run_descriptor) }
           end
 
         private
